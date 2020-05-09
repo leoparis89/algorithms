@@ -1,5 +1,4 @@
 export const mergeSort = (arr: number[]) => {
-  console.log(arr);
   if (arr.length <= 1) {
     return arr;
   }
