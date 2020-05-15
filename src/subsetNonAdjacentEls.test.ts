@@ -66,7 +66,69 @@ const combinationUtil = (arr, data, start, end, index, r) => {
   }
 };
 
+const travers = (arr: number[], offset, depth, target, acc = []) => {
+  if (depth === target) {
+    console.log("GAOLR2");
+    console.log(acc);
+    // acc.splice(0, acc.length);
+    return;
+  }
+  // if (current === depth) {
+  //   return;
+  // }
+  // for (let i = offset; i < arr.length; i++) {
+  //   // console.log(arr[i], "depth", depth, "target", target);
+  //   acc.push(arr[i]);
+  //   travers(arr, i + 1, depth + 1, target, acc);
+  //   // travers(arr);
+  //   // console.log(arr[i]);
+  //   // for (let j = i + 1; j < arr.length; j++) {
+  //   //   // console.log(arr[i] arr[j]);
+  //   //   for (let k = j + 1; k < arr.length; k++) {
+  //   //     // console.log(arr[i] arr[j]);
+  //   //     console.log(`${arr[i]}-${arr[j]}-${arr[k]}`);
+  //   //   }
+  //   // }
+  for (let i = offset; i < arr.length; i++) {
+    // console.log("r-" + depth);
+    acc.push(arr[i]);
+    travers(arr, i + 1, depth + 1, target, acc);
+  }
+  // for (let i = 0; i < arr.length; i++) {
+  //   console.log("depth", 0);
+  //   for (let j = i + 1; j < arr.length; j++) {
+  //     console.log("depth", 1);
+  //     // console.log(arr[i] arr[j]);
+  //     // for (let k = j + 1; k < arr.length; k++) {
+  //     //   // console.log(arr[i] arr[j]);
+  //     //   // console.log("depth", 2);
+  //     //   console.log(`${arr[i]}-${arr[j]}-${arr[k]}`);
+  //     // }
+  //   }
+  // }
+  // }
+};
+const traversNaive = arr => {
+  for (let i = 0; i < arr.length; i++) {
+    // console.log("n depth", 0);
+    for (let j = i + 1; j < arr.length; j++) {
+      // console.log(`${arr[i]}-${arr[j]}`);
+      for (let l = j + 1; l < arr.length; l++) {
+        // console.log("GOAL");
+        console.log(`${arr[i]}-${arr[j]}-${arr[l]}`);
+      }
+    }
+  }
+};
+const traversFinal = (arr: number[], offset, depth) => {
+  const acc: number[] = [];
+  travers(arr, 0, 0, 1);
+};
+
 test("subsetNonAdjacentEls should return the right value", () => {
   //   expect(getSubset([1, 2, 3, 4])).toEqual("foo");
-  printCombos([1, 2, 3, 4], 4, 3);
+  // traversFinal([1, 2, 3], 0, 1);
+  const input = [1, 2, 3, 4];
+  traversNaive(input);
+  travers(input, 0, 0, 3);
 });
