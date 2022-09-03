@@ -24,7 +24,7 @@ export class BinarySearchTree {
       if (key < current.data) {
         current = current.left;
         break;
-      } else if (key > current?.data) {
+      } else if (key > current.data) {
         current = current.right;
         break;
       } else {
