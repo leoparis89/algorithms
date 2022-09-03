@@ -31,6 +31,27 @@ describe("mergeSort", () => {
     // mergeSort(input);
   });
 
+  test("adding multiple nodes (imperative)", () => {
+    let tree = new BinarySearchTree();
+
+    tree.insertImperative(7);
+    tree.insertImperative(2);
+    tree.insertImperative(8);
+    tree.insertImperative(9);
+
+    expect(tree).toEqual({
+      root: {
+        data: 7,
+        left: { data: 2, left: null, right: null },
+        right: {
+          data: 8,
+          left: null,
+          right: { data: 9, left: null, right: null },
+        },
+      },
+    });
+  });
+
   test("get", () => {
     let tree = new BinarySearchTree();
 

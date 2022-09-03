@@ -37,11 +37,12 @@ export class BinarySearchTree {
     let newNode = new TreeNode(key);
 
     if (this.root == null) {
-      this.root == newNode;
+      this.root = newNode;
       return;
     }
 
     let current = this.root;
+
     while (true) {
       if (key < current.data) {
         if (current.left == null) {
