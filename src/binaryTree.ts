@@ -17,16 +17,17 @@ export class BinarySearchTree {
   get(key: number) {
     let current = this.root;
     while (true) {
+      console.log(current, current?.data);
       if (current === null) {
         return null;
       }
 
       if (key < current.data) {
         current = current.left;
-        break;
+        continue;
       } else if (key > current.data) {
         current = current.right;
-        break;
+        continue;
       } else {
         return current;
       }

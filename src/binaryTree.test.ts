@@ -31,13 +31,21 @@ describe("mergeSort", () => {
     // mergeSort(input);
   });
 
-  test("removing multiple noddes ", () => {
+  test("get", () => {
     let tree = new BinarySearchTree();
 
     tree.insert(7);
     tree.insert(2);
     tree.insert(8);
     tree.insert(9);
+
+    expect(tree.get(8)).toEqual({
+      data: 8,
+      left: null,
+      right: { data: 9, left: null, right: null },
+    });
+
+    expect(tree.get(9)).toEqual({ data: 9, left: null, right: null });
   });
 });
 
