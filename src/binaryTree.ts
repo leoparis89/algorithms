@@ -1,5 +1,5 @@
 class TreeNode {
-  data: TreeNode | null = null;
+  data: number | null = null;
   left: TreeNode | null = null;
   right: TreeNode | null = null;
   constructor(data) {
@@ -41,6 +41,8 @@ export class BinarySearchTree {
   // function to be implemented
   // insert(data)
   // remove(data)
+
+  remove(value: number) {}
 
   // Helper function
   // findMinNode()
