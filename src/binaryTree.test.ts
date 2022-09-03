@@ -46,6 +46,7 @@ describe("mergeSort", () => {
     });
 
     expect(tree.get(9)).toEqual({ data: 9, left: null, right: null });
+    expect(tree.get(3)).toEqual(null);
   });
 });
 
