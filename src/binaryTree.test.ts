@@ -83,6 +83,12 @@ describe("mergeSort", () => {
       left: null,
       right: null,
     });
+
+    expect(tree.getLeastChildByKey(8)).toEqual({
+      data: 8,
+      left: null,
+      right: { data: 9, left: null, right: null },
+    });
   });
 });
 
