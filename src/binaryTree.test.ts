@@ -30,6 +30,15 @@ describe("mergeSort", () => {
     });
     // mergeSort(input);
   });
+
+  test("removing multiple noddes ", () => {
+    let tree = new BinarySearchTree();
+
+    tree.insert(7);
+    tree.insert(2);
+    tree.insert(8);
+    tree.insert(9);
+  });
 });
 
 // describe("merge", () => {
