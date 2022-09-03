@@ -111,8 +111,6 @@ export class BinarySearchTree {
       return node;
     }
 
-    //
-
     if (node.left == null && node.right == null) {
       return null;
     }
@@ -124,6 +122,18 @@ export class BinarySearchTree {
     if (node.right == null) {
       return node.left;
     }
+  }
+
+  getLeastChildByKey(key: number) {
+    let node = this.get(key);
+
+    return node == null ? node : this.getLeastChildByNode(node);
+  }
+
+  getLeastChildByNode(node: TreeNode) {
+    if (node.left == null) return node;
+
+    return this.getLeastChildByNode(node.left);
   }
 
   // Helper function

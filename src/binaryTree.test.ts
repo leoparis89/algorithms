@@ -69,6 +69,21 @@ describe("mergeSort", () => {
     expect(tree.get(9)).toEqual({ data: 9, left: null, right: null });
     expect(tree.get(3)).toEqual(null);
   });
+
+  test("getLeastChild ", () => {
+    let tree = new BinarySearchTree();
+
+    tree.insert(7);
+    tree.insert(2);
+    tree.insert(8);
+    tree.insert(9);
+
+    expect(tree.getLeastChildByKey(7)).toEqual({
+      data: 2,
+      left: null,
+      right: null,
+    });
+  });
 });
 
 // describe("merge", () => {
