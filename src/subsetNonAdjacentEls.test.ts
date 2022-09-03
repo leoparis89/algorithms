@@ -70,7 +70,7 @@ const travers = (arr: number[], offset, depth, target, acc = []) => {
   if (depth === target) {
     console.log("GAOLR2");
     console.log(acc);
-    // acc.splice(0, acc.length);
+    acc.pop();
     return;
   }
   // if (current === depth) {
@@ -91,7 +91,11 @@ const travers = (arr: number[], offset, depth, target, acc = []) => {
   //   // }
   for (let i = offset; i < arr.length; i++) {
     // console.log("r-" + depth);
-    acc.push(arr[i]);
+    if (i === arr.length - 1) {
+      arr.pop();
+    } else {
+      acc.push(arr[i]);
+    }
     travers(arr, i + 1, depth + 1, target, acc);
   }
   // for (let i = 0; i < arr.length; i++) {
