@@ -9,6 +9,17 @@ describe("mergeSort", () => {
         expect(tree).toEqual({ "root": 7 })
         // mergeSort(input);
     });
+
+    test("adding multiple nodes", () => {
+        let tree = new BinarySearchTree()
+        tree.insert(7)
+        tree.insert(2)
+        tree.insert(8)
+        tree.insert(9)
+
+        expect(tree).toEqual({ "root": { "data": 7, "left": { "data": 2, "left": null, "right": null }, "right": { "data": 8, "left": null, "right": { "data": 9, "left": null, "right": null } } } })
+        // mergeSort(input);
+    });
 });
 
 // describe("merge", () => {

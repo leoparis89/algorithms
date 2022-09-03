@@ -20,7 +20,7 @@ export class BinarySearchTree {
     insert(data) {
         const newNode = new TreeNode(data)
         if (this.root == null) {
-            this.root = data
+            this.root = newNode
         } else {
             this.insertNode(this.root, newNode)
         }
