@@ -5,7 +5,7 @@ describe("mergeSort", () => {
     let tree = new BinarySearchTree();
     tree.insert(7);
 
-    expect(tree).toEqual({ root: 7 });
+    expect(tree).toEqual({ root: { data: 7, left: null, right: null } });
     // mergeSort(input);
   });
 
@@ -28,6 +28,7 @@ describe("mergeSort", () => {
         },
       },
     });
+    // mergeSort(input);
   });
 });
 
