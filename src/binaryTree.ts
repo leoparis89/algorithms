@@ -17,7 +17,6 @@ export class BinarySearchTree {
   get(key: number) {
     let current = this.root;
     while (true) {
-      console.log(current, current?.data);
       if (current === null) {
         return null;
       }
@@ -30,6 +29,36 @@ export class BinarySearchTree {
         continue;
       } else {
         return current;
+      }
+    }
+  }
+
+  insertImperative(key: number) {
+    let newNode = new TreeNode(key);
+
+    if (this.root == null) {
+      this.root == newNode;
+      return;
+    }
+
+    let current = this.root;
+    while (true) {
+      if (key < current.data) {
+        if (current.left == null) {
+          current.left = newNode;
+          break;
+        } else {
+          current = current.left;
+          continue;
+        }
+      } else {
+        if (current.right == null) {
+          current.right = newNode;
+          break;
+        } else {
+          current = current.right;
+          continue;
+        }
       }
     }
   }
