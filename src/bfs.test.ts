@@ -1,4 +1,4 @@
-const _getNeighbors = (from, to) => id => {
+const _getNeighbors = (from, to) => (id) => {
   const result = [];
   from.forEach((val, i) => {
     if (val === id) {
@@ -31,7 +31,7 @@ const bfs = (from, to, start) => {
     const current = queue.shift();
 
     const next = getNeighbors(current);
-    next.forEach(node => {
+    next.forEach((node) => {
       if (!visited[node]) {
         visited[node] = true;
         queue.push(node);

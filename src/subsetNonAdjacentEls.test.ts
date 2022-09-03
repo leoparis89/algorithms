@@ -112,7 +112,7 @@ const travers = (arr: number[], offset, depth, target, acc = []) => {
   // }
   // }
 };
-const traversNaive = arr => {
+const traversNaive = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     // console.log("n depth", 0);
     for (let j = i + 1; j < arr.length; j++) {
