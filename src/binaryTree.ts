@@ -143,7 +143,17 @@ export class BinarySearchTree {
       return;
     }
 
-    if (node.left == null && node.right == null) {
+    if (node.left === null && node.right === null) {
+      this.replace(key, null);
+      return;
+    }
+
+    if (node.left !== null && node.right !== null) {
+      //
+    }
+
+    if (node.left !== null) {
+    } else {
     }
   }
 
