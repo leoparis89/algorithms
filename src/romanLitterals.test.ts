@@ -1,8 +1,8 @@
-import { getVal } from "./romanLitterals";
+import { intToRoman } from "./romanLitterals";
 
 test("should ", () => {
-  expect(getVal("V")).toEqual(5);
-  expect(getVal("VI")).toEqual(6);
-  expect(getVal("LVIII")).toEqual(58);
-  expect(getVal("MCMXCIV")).toEqual(1994);
+  expect(intToRoman("V")).toEqual(5);
+  expect(intToRoman("VI")).toEqual(6);
+  expect(intToRoman("LVIII")).toEqual(58);
+  expect(intToRoman("MCMXCIV")).toEqual(1994);
 });

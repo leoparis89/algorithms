@@ -3,22 +3,22 @@ let startsWith = (str, searched) => {
 };
 
 let matchers = [
-  ["IV", 4],
-  ["IX", 9],
-  ["XL", 50],
-  ["XC", 90],
-  ["CD", 400],
-  ["CM", 900],
   ["I", 1],
+  ["IV", 4],
   ["V", 5],
+  ["IX", 9],
   ["X", 10],
+  ["XL", 40],
   ["L", 50],
+  ["XC", 90],
   ["C", 100],
+  ["CD", 400],
   ["D", 500],
+  ["CM", 900],
   ["M", 1000],
 ];
 
-export let getVal = (str) => {
+export let intToRoman = (str) => {
   let total = 0;
   let tmp = str;
 
