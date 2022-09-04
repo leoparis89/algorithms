@@ -213,9 +213,28 @@ describe("mergeSort", () => {
       });
     });
 
-    test.skip("case with 2 children", () => {
+    test("case with 2 children", () => {
       let tree = makeTutorialTree();
       tree.delete(5);
+      expect(tree).toEqual({
+        root: {
+          data: 10,
+          left: {
+            data: 6,
+            left: { data: 3, left: null, right: null },
+            right: {
+              data: 8,
+              left: { data: 7, left: null, right: null },
+              right: null,
+            },
+          },
+          right: {
+            data: 15,
+            left: { data: 12, left: null, right: null },
+            right: { data: 17, left: null, right: null },
+          },
+        },
+      });
     });
 
     test("case 1 child (lef)", () => {

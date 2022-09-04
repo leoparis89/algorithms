@@ -1,18 +1,14 @@
 export class TreeNode {
-  data: number;
+  key: number;
   left: TreeNode | null = null;
   right: TreeNode | null = null;
   constructor(data: number) {
-    this.data = data;
+    this.key = data;
   }
 }
 
-// Binary Search tree class
 export class BinarySearchTree {
   root: TreeNode | null = null;
-  constructor() {
-    // root of a binary search tree
-  }
 
   get(key: number) {
     let current = this.root;
@@ -21,10 +17,10 @@ export class BinarySearchTree {
         return null;
       }
 
-      if (key < current.data) {
+      if (key < current.key) {
         current = current.left;
         continue;
-      } else if (key > current.data) {
+      } else if (key > current.key) {
         current = current.right;
         continue;
       } else {
@@ -44,7 +40,7 @@ export class BinarySearchTree {
     let current = this.root;
 
     while (true) {
-      if (key < current.data) {
+      if (key < current.key) {
         if (current.left == null) {
           current.left = newNode;
           break;
@@ -74,7 +70,7 @@ export class BinarySearchTree {
   }
 
   insertNode(node: TreeNode, newNode: TreeNode) {
-    if (newNode.data! < node.data!) {
+    if (newNode.key! < node.key!) {
       if (node.left == null) {
         node.left = newNode;
       } else {
@@ -88,41 +84,6 @@ export class BinarySearchTree {
       }
     }
   }
-  // function to be implemented
-  // insert(data)
-  // remove(data)
-
-  //   remove(data) {
-  //     this.root = this.removeNode(this.root, data);
-  //   }
-
-  //   removeNode(node, key) {
-  //     if (node == null) {
-  //       return null;
-  //     }
-
-  //     if (key < node.data) {
-  //       node.left = this.removeNode(node.left, key);
-  //       return node;
-  //     }
-
-  //     if (key > node.data) {
-  //       node.right = this.removeNode(node.right, key);
-  //       return node;
-  //     }
-
-  //     if (node.left == null && node.right == null) {
-  //       return null;
-  //     }
-
-  //     if (node.left == null) {
-  //       return node.right;
-  //     }
-
-  //     if (node.right == null) {
-  //       return node.left;
-  //     }
-  //   }
 
   getLeastChildByKey(key: number) {
     let node = this.get(key);
@@ -130,7 +91,7 @@ export class BinarySearchTree {
     return node == null ? node : this.getLeastChildByNode(node);
   }
 
-  getLeastChildByNode(node: TreeNode) {
+  private getLeastChildByNode(node: TreeNode) {
     if (node.left == null) return node;
 
     return this.getLeastChildByNode(node.left);
@@ -150,15 +111,11 @@ export class BinarySearchTree {
 
     if (node.left !== null && node.right !== null) {
       const leastChildOnRight = this.getLeastChildByNode(node.right);
-      console.log(leastChildOnRight);
-      //
+      this.delete(leastChildOnRight.data);
+      node.key = leastChildOnRight.data;
     }
 
-    if (node.left !== null) {
-      this.replace(key, node.left);
-    } else {
-      this.replace(key, node.right);
-    }
+    this.replace(key, node.left !== null ? node.left : node.right);
   }
 
   replace(target: number, replacement: null | TreeNode) {
@@ -169,17 +126,17 @@ export class BinarySearchTree {
         return;
       }
 
-      if (current?.left?.data == target) {
+      if (current?.left?.key == target) {
         current.left = replacement;
         return;
       }
 
-      if (current?.right?.data == target) {
+      if (current?.right?.key == target) {
         current.right = replacement;
         return;
       }
 
-      if (target < current.data) {
+      if (target < current.key) {
         current = current.left;
       } else {
         current = current.right;
