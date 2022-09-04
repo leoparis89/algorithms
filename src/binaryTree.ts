@@ -152,17 +152,17 @@ export class BinarySearchTree {
 
     while (true) {
       if (current == null) {
-        return null;
+        return;
       }
 
       if (current?.left?.data == target) {
         current.left = replacement;
-        return replacement;
+        return;
       }
 
       if (current?.right?.data == target) {
         current.right = replacement;
-        return replacement;
+        return;
       }
 
       if (target < current.data) {
