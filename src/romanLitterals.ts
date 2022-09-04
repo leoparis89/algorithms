@@ -38,4 +38,4 @@ export let romanToInt = (str) => {
   return total;
 };
 
-// export let romainToIng = (int: number) => {};
+export let intToRoman = (int: number) => {};
