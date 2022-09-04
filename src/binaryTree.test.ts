@@ -213,9 +213,19 @@ describe("mergeSort", () => {
       });
     });
 
-    test("case with 2 children", () => {
+    test.skip("case with 2 children", () => {
       let tree = makeTutorialTree();
       tree.delete(5);
+    });
+
+    test("case 1 child (lef)", () => {
+      let tree = makeTutorialTree();
+      tree.insert(10);
+      tree.insert(5);
+      tree.insert(15);
+      tree.insert(12);
+      tree.insert(11);
+      tree.insert(14);
     });
   });
 });
