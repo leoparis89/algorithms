@@ -2,15 +2,15 @@ let startsWith = (str, searched) => {
   return str.indexOf(searched) === 0;
 };
 
-let matchers = [
+let matchers: Array<[string, number]> = [
   ["IV", 4],
-  ["IX", 9],
   ["XL", 40],
   ["XC", 90],
   ["CD", 400],
   ["CM", 900],
   ["I", 1],
   ["V", 5],
+  ["IX", 9],
   ["X", 10],
   ["L", 50],
   ["C", 100],
@@ -27,7 +27,7 @@ export let intToRoman = (str) => {
       const [symbol, value] = matchers[i];
 
       if (startsWith(tmp, symbol)) {
-        total += value as number;
+        total += value;
         tmp = tmp.replace(symbol, "");
 
         break;
@@ -37,3 +37,5 @@ export let intToRoman = (str) => {
 
   return total;
 };
+
+export let romainToIng = (int: number) => {};
