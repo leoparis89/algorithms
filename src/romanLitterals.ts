@@ -18,7 +18,7 @@ let matchers: Array<[string, number]> = [
   ["M", 1000],
 ];
 
-export let intToRoman = (str) => {
+export let romanToInt = (str) => {
   let total = 0;
   let tmp = str;
 
@@ -38,4 +38,4 @@ export let intToRoman = (str) => {
   return total;
 };
 
-export let romainToIng = (int: number) => {};
+// export let romainToIng = (int: number) => {};
