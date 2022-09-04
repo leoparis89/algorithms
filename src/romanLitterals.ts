@@ -38,5 +38,20 @@ export let romanToInt = (str) => {
   return total;
 };
 
-let sorted = [...matchers].sort((a, b) => a[1] - b[1]);
-export let intToRoman = (int: number) => {};
+export let intToRoman = (int: number) => {
+  let sortedMatchers = [...matchers].sort((a, b) => b[1] - a[1]);
+  let total = "";
+  let tmp = int;
+  do {
+    for (let i = 0; i < sortedMatchers.length; i++) {
+      const [symbol, value] = sortedMatchers[i];
+      if (tmp / value >= 1) {
+        total += symbol;
+        tmp -= value;
+
+        break;
+      }
+    }
+  } while (tmp > 0);
+  return total;
+};

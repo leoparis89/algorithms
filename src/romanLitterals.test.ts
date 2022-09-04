@@ -8,5 +8,9 @@ test("romanToInt ", () => {
 });
 
 test("intToRoman ", () => {
-  expect(intToRoman(8)).toEqual(5);
+  expect(intToRoman(1)).toEqual("I");
+  expect(intToRoman(3)).toEqual("III");
+  expect(intToRoman(58)).toEqual("LVIII");
+  expect(intToRoman(1994)).toEqual("MCMXCIV");
+  expect(intToRoman(20)).toEqual("XX");
 });
