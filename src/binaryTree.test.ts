@@ -13,12 +13,12 @@ const makeTutorialTree = () => {
   return tree;
 };
 
-describe("mergeSort", () => {
+describe("Binary Search Tree", () => {
   test("adding first node", () => {
     let tree = new BinarySearchTree();
     tree.insert(7);
 
-    expect(tree).toEqual({ root: { data: 7, left: null, right: null } });
+    expect(tree).toEqual({ root: { key: 7, left: null, right: null } });
     // mergeSort(input);
   });
 
@@ -32,12 +32,12 @@ describe("mergeSort", () => {
 
     expect(tree).toEqual({
       root: {
-        data: 7,
-        left: { data: 2, left: null, right: null },
+        key: 7,
+        left: { key: 2, left: null, right: null },
         right: {
-          data: 8,
+          key: 8,
           left: null,
-          right: { data: 9, left: null, right: null },
+          right: { key: 9, left: null, right: null },
         },
       },
     });
@@ -54,12 +54,12 @@ describe("mergeSort", () => {
 
     expect(tree).toEqual({
       root: {
-        data: 7,
-        left: { data: 2, left: null, right: null },
+        key: 7,
+        left: { key: 2, left: null, right: null },
         right: {
-          data: 8,
+          key: 8,
           left: null,
-          right: { data: 9, left: null, right: null },
+          right: { key: 9, left: null, right: null },
         },
       },
     });
@@ -74,12 +74,12 @@ describe("mergeSort", () => {
     tree.insert(9);
 
     expect(tree.get(8)).toEqual({
-      data: 8,
+      key: 8,
       left: null,
-      right: { data: 9, left: null, right: null },
+      right: { key: 9, left: null, right: null },
     });
 
-    expect(tree.get(9)).toEqual({ data: 9, left: null, right: null });
+    expect(tree.get(9)).toEqual({ key: 9, left: null, right: null });
     expect(tree.get(3)).toEqual(null);
   });
 
@@ -92,15 +92,15 @@ describe("mergeSort", () => {
     tree.insert(9);
 
     expect(tree.getLeastChildByKey(7)).toEqual({
-      data: 2,
+      key: 2,
       left: null,
       right: null,
     });
 
     expect(tree.getLeastChildByKey(8)).toEqual({
-      data: 8,
+      key: 8,
       left: null,
-      right: { data: 9, left: null, right: null },
+      right: { key: 9, left: null, right: null },
     });
   });
 
@@ -115,9 +115,9 @@ describe("mergeSort", () => {
     tree.replace(9, null);
     expect(tree).toEqual({
       root: {
-        data: 7,
-        left: { data: 2, left: null, right: null },
-        right: { data: 8, left: null, right: null },
+        key: 7,
+        left: { key: 2, left: null, right: null },
+        right: { key: 8, left: null, right: null },
       },
     });
 
@@ -126,9 +126,9 @@ describe("mergeSort", () => {
     tree.replace(8, node);
     expect(tree).toEqual({
       root: {
-        data: 7,
-        left: { data: 2, left: null, right: null },
-        right: { data: 88, left: null, right: null },
+        key: 7,
+        left: { key: 2, left: null, right: null },
+        right: { key: 88, left: null, right: null },
       },
     });
   });
@@ -139,24 +139,24 @@ describe("mergeSort", () => {
 
       expect(tree).toEqual({
         root: {
-          data: 10,
+          key: 10,
           left: {
-            data: 5,
-            left: { data: 3, left: null, right: null },
+            key: 5,
+            left: { key: 3, left: null, right: null },
             right: {
-              data: 8,
+              key: 8,
               left: {
-                data: 6,
+                key: 6,
                 left: null,
-                right: { data: 7, left: null, right: null },
+                right: { key: 7, left: null, right: null },
               },
               right: null,
             },
           },
           right: {
-            data: 15,
-            left: { data: 12, left: null, right: null },
-            right: { data: 17, left: null, right: null },
+            key: 15,
+            left: { key: 12, left: null, right: null },
+            right: { key: 17, left: null, right: null },
           },
         },
       });
@@ -164,14 +164,14 @@ describe("mergeSort", () => {
       tree.delete(7);
       expect(tree).toEqual({
         root: {
-          data: 10,
+          key: 10,
           left: {
-            data: 5,
-            left: { data: 3, left: null, right: null },
+            key: 5,
+            left: { key: 3, left: null, right: null },
             right: {
-              data: 8,
+              key: 8,
               left: {
-                data: 6,
+                key: 6,
                 left: null,
                 right: null,
               },
@@ -179,9 +179,9 @@ describe("mergeSort", () => {
             },
           },
           right: {
-            data: 15,
-            left: { data: 12, left: null, right: null },
-            right: { data: 17, left: null, right: null },
+            key: 15,
+            left: { key: 12, left: null, right: null },
+            right: { key: 17, left: null, right: null },
           },
         },
       });
@@ -190,14 +190,14 @@ describe("mergeSort", () => {
 
       expect(tree).toEqual({
         root: {
-          data: 10,
+          key: 10,
           left: {
-            data: 5,
-            left: { data: 3, left: null, right: null },
+            key: 5,
+            left: { key: 3, left: null, right: null },
             right: {
-              data: 8,
+              key: 8,
               left: {
-                data: 6,
+                key: 6,
                 left: null,
                 right: null,
               },
@@ -205,9 +205,9 @@ describe("mergeSort", () => {
             },
           },
           right: {
-            data: 15,
+            key: 15,
             left: null,
-            right: { data: 17, left: null, right: null },
+            right: { key: 17, left: null, right: null },
           },
         },
       });
@@ -218,20 +218,20 @@ describe("mergeSort", () => {
       tree.delete(5);
       expect(tree).toEqual({
         root: {
-          data: 10,
+          key: 10,
           left: {
-            data: 6,
-            left: { data: 3, left: null, right: null },
+            key: 6,
+            left: { key: 3, left: null, right: null },
             right: {
-              data: 8,
-              left: { data: 7, left: null, right: null },
+              key: 8,
+              left: { key: 7, left: null, right: null },
               right: null,
             },
           },
           right: {
-            data: 15,
-            left: { data: 12, left: null, right: null },
-            right: { data: 17, left: null, right: null },
+            key: 15,
+            left: { key: 12, left: null, right: null },
+            right: { key: 17, left: null, right: null },
           },
         },
       });
@@ -247,14 +247,14 @@ describe("mergeSort", () => {
       tree.insert(14);
       expect(tree).toEqual({
         root: {
-          data: 10,
-          left: { data: 5, left: null, right: null },
+          key: 10,
+          left: { key: 5, left: null, right: null },
           right: {
-            data: 15,
+            key: 15,
             left: {
-              data: 12,
-              left: { data: 11, left: null, right: null },
-              right: { data: 14, left: null, right: null },
+              key: 12,
+              left: { key: 11, left: null, right: null },
+              right: { key: 14, left: null, right: null },
             },
             right: null,
           },
@@ -264,12 +264,12 @@ describe("mergeSort", () => {
       tree.delete(15);
       expect(tree).toEqual({
         root: {
-          data: 10,
-          left: { data: 5, left: null, right: null },
+          key: 10,
+          left: { key: 5, left: null, right: null },
           right: {
-            data: 12,
-            left: { data: 11, left: null, right: null },
-            right: { data: 14, left: null, right: null },
+            key: 12,
+            left: { key: 11, left: null, right: null },
+            right: { key: 14, left: null, right: null },
           },
         },
       });
