@@ -50,9 +50,9 @@ const printCombos = (arr, size, r) => {
 
 const combinationUtil = (arr, data, start, end, index, r) => {
   if (index === r) {
-    console.log("-----");
+    // console.log("-----");
     for (let j = 0; j < r; j++) {
-      console.log(data[j]);
+      // console.log(data[j]);
     }
   }
   // replace index with all possible
@@ -68,8 +68,6 @@ const combinationUtil = (arr, data, start, end, index, r) => {
 
 const travers = (arr: number[], offset, depth, target, acc = []) => {
   if (depth === target) {
-    console.log("GAOLR2");
-    console.log(acc);
     acc.pop();
     return;
   }
@@ -119,7 +117,6 @@ const traversNaive = (arr) => {
       // console.log(`${arr[i]}-${arr[j]}`);
       for (let l = j + 1; l < arr.length; l++) {
         // console.log("GOAL");
-        console.log(`${arr[i]}-${arr[j]}-${arr[l]}`);
       }
     }
   }

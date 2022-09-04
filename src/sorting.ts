@@ -1,16 +1,20 @@
 export const bubbleSort = (arr: number[]) => {
-  let swapped = false;
+  let result = [...arr];
+  let swapped;
 
   do {
-    for (let i = 0; i < arr.length - 1; i++) {
-      if (arr[i] > arr[i + 1]) {
-        let temp = arr[i];
-        arr[i] = arr[i + 1];
-        arr[i + 1] = temp;
+    swapped = false;
+    for (let i = 0; i < result.length - 1; i++) {
+      if (result[i] > result[i + 1]) {
+        let temp = result[i];
+        result[i] = result[i + 1];
+        result[i + 1] = temp;
         swapped = true;
       }
     }
   } while (swapped);
+
+  return result;
 };
 
 export const insertionSort = (arr: number[]) => {};
