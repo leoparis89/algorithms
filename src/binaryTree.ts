@@ -1,4 +1,4 @@
-class TreeNode {
+export class TreeNode {
   data: number;
   left: TreeNode | null = null;
   right: TreeNode | null = null;
@@ -152,17 +152,17 @@ export class BinarySearchTree {
 
     while (true) {
       if (current == null) {
-        return;
+        return null;
       }
 
       if (current?.left?.data == target) {
         current.left = replacement;
-        break;
+        return replacement;
       }
 
       if (current?.right?.data == target) {
         current.right = replacement;
-        break;
+        return replacement;
       }
 
       if (target < current.data) {

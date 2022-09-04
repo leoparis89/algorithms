@@ -1,4 +1,4 @@
-import { BinarySearchTree } from "./binaryTree";
+import { BinarySearchTree, TreeNode } from "./binaryTree";
 
 describe("mergeSort", () => {
   test("adding first node", () => {
@@ -88,6 +88,35 @@ describe("mergeSort", () => {
       data: 8,
       left: null,
       right: { data: 9, left: null, right: null },
+    });
+  });
+
+  test("replace ", () => {
+    let tree = new BinarySearchTree();
+
+    tree.insert(7);
+    tree.insert(2);
+    tree.insert(8);
+    tree.insert(9);
+
+    tree.replace(9, null);
+    expect(tree).toEqual({
+      root: {
+        data: 7,
+        left: { data: 2, left: null, right: null },
+        right: { data: 8, left: null, right: null },
+      },
+    });
+
+    tree.insert(9);
+    let node = new TreeNode(88);
+    tree.replace(8, node);
+    expect(tree).toEqual({
+      root: {
+        data: 7,
+        left: { data: 2, left: null, right: null },
+        right: { data: 88, left: null, right: null },
+      },
     });
   });
 });
