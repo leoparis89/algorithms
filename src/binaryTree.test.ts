@@ -1,4 +1,17 @@
 import { BinarySearchTree, TreeNode } from "./binaryTree";
+const makeTutorialTree = () => {
+  const tree = new BinarySearchTree();
+  tree.insert(10);
+  tree.insert(5);
+  tree.insert(15);
+  tree.insert(8);
+  tree.insert(3);
+  tree.insert(12);
+  tree.insert(17);
+  tree.insert(6);
+  tree.insert(7);
+  return tree;
+};
 
 describe("mergeSort", () => {
   test("adding first node", () => {
@@ -117,6 +130,87 @@ describe("mergeSort", () => {
         left: { data: 2, left: null, right: null },
         right: { data: 88, left: null, right: null },
       },
+    });
+  });
+
+  describe("delete", () => {
+    test("case with no children", () => {
+      let tree = makeTutorialTree();
+
+      expect(tree).toEqual({
+        root: {
+          data: 10,
+          left: {
+            data: 5,
+            left: { data: 3, left: null, right: null },
+            right: {
+              data: 8,
+              left: {
+                data: 6,
+                left: null,
+                right: { data: 7, left: null, right: null },
+              },
+              right: null,
+            },
+          },
+          right: {
+            data: 15,
+            left: { data: 12, left: null, right: null },
+            right: { data: 17, left: null, right: null },
+          },
+        },
+      });
+
+      tree.delete(7);
+      expect(tree).toEqual({
+        root: {
+          data: 10,
+          left: {
+            data: 5,
+            left: { data: 3, left: null, right: null },
+            right: {
+              data: 8,
+              left: {
+                data: 6,
+                left: null,
+                right: null,
+              },
+              right: null,
+            },
+          },
+          right: {
+            data: 15,
+            left: { data: 12, left: null, right: null },
+            right: { data: 17, left: null, right: null },
+          },
+        },
+      });
+
+      tree.delete(12);
+
+      expect(tree).toEqual({
+        root: {
+          data: 10,
+          left: {
+            data: 5,
+            left: { data: 3, left: null, right: null },
+            right: {
+              data: 8,
+              left: {
+                data: 6,
+                left: null,
+                right: null,
+              },
+              right: null,
+            },
+          },
+          right: {
+            data: 15,
+            left: null,
+            right: { data: 17, left: null, right: null },
+          },
+        },
+      });
     });
   });
 });
