@@ -212,6 +212,11 @@ describe("mergeSort", () => {
         },
       });
     });
+
+    test("case with 2 children", () => {
+      let tree = makeTutorialTree();
+      tree.delete(5);
+    });
   });
 });
 
