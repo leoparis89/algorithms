@@ -1,4 +1,4 @@
-import { bubbleSort, insertionSort, join } from "./sorting";
+import { bubbleSort, insertionSort, join, mergeSort } from "./sorting";
 
 describe("sorting", () => {
   test("bubblesort", () => {
@@ -13,5 +13,6 @@ describe("sorting", () => {
 
   test("mergetSort ", () => {
     expect(join([1, 2, 6], [2, 3, 9, 11])).toEqual([1, 2, 2, 3, 6, 9, 11]);
+    expect(mergeSort([3, 4, 1, 7, 8, 9, 4])).toEqual([1, 3, 4, 4, 7, 8, 9]);
   });
 });

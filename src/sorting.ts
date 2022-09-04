@@ -74,4 +74,14 @@ export const join = (left: number[], right: number[]) => {
   return [...result, ...left, ...right];
 };
 
-export const mergeSort = (arr) => {};
+export const mergeSort = (arr: number[]) => {
+  const middle = Math.floor(arr.length / 2);
+  const left = arr.slice(0, middle);
+  const right = arr.slice(middle, arr.length);
+
+  if (arr.length == 1) {
+    return arr;
+  }
+
+  return join(mergeSort(left), mergeSort(right));
+};
