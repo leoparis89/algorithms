@@ -8,9 +8,9 @@ let matchers: Array<[string, number]> = [
   ["XC", 90],
   ["CD", 400],
   ["CM", 900],
+  ["IX", 9],
   ["I", 1],
   ["V", 5],
-  ["IX", 9],
   ["X", 10],
   ["L", 50],
   ["C", 100],
@@ -38,4 +38,5 @@ export let romanToInt = (str) => {
   return total;
 };
 
+let sorted = [...matchers].sort((a, b) => a[1] - b[1]);
 export let intToRoman = (int: number) => {};
