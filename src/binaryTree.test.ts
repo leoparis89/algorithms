@@ -219,13 +219,41 @@ describe("mergeSort", () => {
     });
 
     test("case 1 child (lef)", () => {
-      let tree = makeTutorialTree();
+      let tree = new BinarySearchTree();
       tree.insert(10);
       tree.insert(5);
       tree.insert(15);
       tree.insert(12);
       tree.insert(11);
       tree.insert(14);
+      expect(tree).toEqual({
+        root: {
+          data: 10,
+          left: { data: 5, left: null, right: null },
+          right: {
+            data: 15,
+            left: {
+              data: 12,
+              left: { data: 11, left: null, right: null },
+              right: { data: 14, left: null, right: null },
+            },
+            right: null,
+          },
+        },
+      });
+
+      tree.delete(15);
+      expect(tree).toEqual({
+        root: {
+          data: 10,
+          left: { data: 5, left: null, right: null },
+          right: {
+            data: 12,
+            left: { data: 11, left: null, right: null },
+            right: { data: 14, left: null, right: null },
+          },
+        },
+      });
     });
   });
 });

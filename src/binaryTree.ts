@@ -155,7 +155,9 @@ export class BinarySearchTree {
     }
 
     if (node.left !== null) {
+      this.replace(key, node.left);
     } else {
+      this.replace(key, node.right);
     }
   }
 
