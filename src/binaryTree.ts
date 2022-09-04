@@ -111,8 +111,8 @@ export class BinarySearchTree {
 
     if (node.left !== null && node.right !== null) {
       const leastChildOnRight = this.getLeastChildByNode(node.right);
-      this.delete(leastChildOnRight.data);
-      node.key = leastChildOnRight.data;
+      this.delete(leastChildOnRight.key);
+      node.key = leastChildOnRight.key;
     }
 
     this.replace(key, node.left !== null ? node.left : node.right);
