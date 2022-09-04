@@ -34,3 +34,44 @@ export const insertionSort = (arr: number[]) => {
 
   return result;
 };
+
+149;
+
+2911;
+export const join = (left: number[], right: number[]) => {
+  left = [...left];
+  right = [...right];
+
+  let result: number[] = [];
+
+  while (left.length > 0 && right.length > 0) {
+    const leftHead = left[0];
+    const rightHed = right[0];
+
+    if (leftHead < rightHed) {
+      result.push(leftHead);
+      left.shift();
+    } else {
+      result.push(rightHed);
+      right.shift();
+    }
+  }
+
+  // for (let i = 0; i < left.length; i++) {
+  //   for (let j = 0; j < right.length; j++) {
+  //     if (left[i] < right[j]) {
+  //       result.push(left[i]);
+  //       left.splice(i, 1);
+  //       i--;
+  //     } else {
+  //       result.push(right[j]);
+  //       right.splice(j, 1);
+  //       j--;
+  //     }
+  //   }
+  // }
+
+  return [...result, ...left, ...right];
+};
+
+export const mergeSort = (arr) => {};
