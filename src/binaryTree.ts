@@ -136,6 +136,43 @@ export class BinarySearchTree {
     return this.getLeastChildByNode(node.left);
   }
 
+  delete(key: number) {
+    let node = this.get(key);
+
+    if (node == null) {
+      return;
+    }
+
+    if (node.left == null && node.right == null) {
+    }
+  }
+
+  replace(target: number, replacement: null | TreeNode) {
+    let current = this.root;
+
+    while (true) {
+      if (current == null) {
+        return;
+      }
+
+      if (current?.left?.data == target) {
+        current.left = replacement;
+        break;
+      }
+
+      if (current?.right?.data == target) {
+        current.right = replacement;
+        break;
+      }
+
+      if (target < current.data) {
+        current = current.left;
+      } else {
+        current = current.right;
+      }
+    }
+  }
+
   // Helper function
   // findMinNode()
   // getRootNode()
