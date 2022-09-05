@@ -201,3 +201,21 @@ export const breadthFirstSearchTraverse = (
   breadthFirstSearchTraverse(queue, array);
   return array;
 };
+
+export const breadthFirstSearchTraverse2 = (
+  queue: Array<TreeNode>,
+  array: any[] = []
+) => {
+  while (queue.length) {
+    let current = queue.shift()!;
+    array.push(current.value);
+
+    if (current.left) {
+      queue.push(current.left);
+    }
+    if (current.right) {
+      queue.push(current.right);
+    }
+  }
+  return array;
+};
