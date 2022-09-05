@@ -40,8 +40,6 @@ export class LinkedList {
   }
 
   getNode(index: number) {
-    if (index < 0) return null;
-
     let node = this.head;
 
     let i = 0;
@@ -65,8 +63,16 @@ export class LinkedList {
       return null;
     }
 
-    const prev = this.getNode(i - 1);
+    if (i === 0) {
+      const head = this.head;
+      if (head) {
+        this.head = head.next;
+      } else {
+        return null;
+      }
+    }
 
+    const prev = this.getNode(i - 1);
     if (prev == null) {
       this.head = current.next;
     } else {
