@@ -183,6 +183,21 @@ export const postorderTraverse = (
   return arr;
 };
 
-export const breadthFirstSearchTravers = (queue, array) => {
+export const breadthFirstSearchTraverse = (
+  queue: Array<TreeNode>,
+  array: any[] = []
+) => {
   if (!queue.length) return array;
+  let current = queue.shift()!;
+  array.push(current.value);
+
+  if (current.left) {
+    queue.push(current.left);
+  }
+  if (current.right) {
+    queue.push(current.right);
+  }
+
+  breadthFirstSearchTraverse(queue, array);
+  return array;
 };

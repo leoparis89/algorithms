@@ -4,6 +4,7 @@ import {
   preorderTraverse,
   inorderTraverse,
   postorderTraverse,
+  breadthFirstSearchTraverse,
 } from "./binaryTree";
 const makeTutorialTree = () => {
   const tree = new BinarySearchTree();
@@ -407,5 +408,19 @@ describe("BST traversals", () => {
         right: null,
       },
     };
+
+    expect(breadthFirstSearchTraverse([tree])).toEqual([
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+    ]);
   });
 });
