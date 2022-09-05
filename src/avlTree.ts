@@ -86,9 +86,6 @@ class TreeNode {
         this.height = this.right.height + 1;
       }
     }
-    // decide to go left or right
-    // find the right place
-    // make sure you upadte height
 
     this.balance();
   }
