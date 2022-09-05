@@ -1,22 +1,22 @@
 import { BinarySearchTree, TreeNode } from "./binaryTree";
 const makeTutorialTree = () => {
   const tree = new BinarySearchTree();
-  tree.insert(10);
-  tree.insert(5);
-  tree.insert(15);
-  tree.insert(8);
-  tree.insert(3);
-  tree.insert(12);
-  tree.insert(17);
-  tree.insert(6);
-  tree.insert(7);
+  tree.add(10);
+  tree.add(5);
+  tree.add(15);
+  tree.add(8);
+  tree.add(3);
+  tree.add(12);
+  tree.add(17);
+  tree.add(6);
+  tree.add(7);
   return tree;
 };
 
 describe("Binary Search Tree", () => {
   test("adding first node", () => {
     let tree = new BinarySearchTree();
-    tree.insert(7);
+    tree.add(7);
 
     expect(tree).toEqual({ root: { key: 7, left: null, right: null } });
     // mergeSort(input);
@@ -25,10 +25,10 @@ describe("Binary Search Tree", () => {
   test("adding multiple nodes", () => {
     let tree = new BinarySearchTree();
 
-    tree.insert(7);
-    tree.insert(2);
-    tree.insert(8);
-    tree.insert(9);
+    tree.add(7);
+    tree.add(2);
+    tree.add(8);
+    tree.add(9);
 
     expect(tree).toEqual({
       root: {
@@ -68,10 +68,10 @@ describe("Binary Search Tree", () => {
   test("get", () => {
     let tree = new BinarySearchTree();
 
-    tree.insert(7);
-    tree.insert(2);
-    tree.insert(8);
-    tree.insert(9);
+    tree.add(7);
+    tree.add(2);
+    tree.add(8);
+    tree.add(9);
 
     expect(tree.get(8)).toEqual({
       key: 8,
@@ -86,10 +86,10 @@ describe("Binary Search Tree", () => {
   test("getLeastChild ", () => {
     let tree = new BinarySearchTree();
 
-    tree.insert(7);
-    tree.insert(2);
-    tree.insert(8);
-    tree.insert(9);
+    tree.add(7);
+    tree.add(2);
+    tree.add(8);
+    tree.add(9);
 
     expect(tree.getLeastChildByKey(7)).toEqual({
       key: 2,
@@ -107,10 +107,10 @@ describe("Binary Search Tree", () => {
   test("replace ", () => {
     let tree = new BinarySearchTree();
 
-    tree.insert(7);
-    tree.insert(2);
-    tree.insert(8);
-    tree.insert(9);
+    tree.add(7);
+    tree.add(2);
+    tree.add(8);
+    tree.add(9);
 
     tree.replace(9, null);
     expect(tree).toEqual({
@@ -121,7 +121,7 @@ describe("Binary Search Tree", () => {
       },
     });
 
-    tree.insert(9);
+    tree.add(9);
     let node = new TreeNode(88);
     tree.replace(8, node);
     expect(tree).toEqual({
@@ -239,12 +239,12 @@ describe("Binary Search Tree", () => {
 
     test("case 1 child (lef)", () => {
       let tree = new BinarySearchTree();
-      tree.insert(10);
-      tree.insert(5);
-      tree.insert(15);
-      tree.insert(12);
-      tree.insert(11);
-      tree.insert(14);
+      tree.add(10);
+      tree.add(5);
+      tree.add(15);
+      tree.add(12);
+      tree.add(11);
+      tree.add(14);
       expect(tree).toEqual({
         root: {
           key: 10,

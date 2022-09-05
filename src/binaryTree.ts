@@ -60,16 +60,7 @@ export class BinarySearchTree {
     }
   }
 
-  insert(data) {
-    const newNode = new TreeNode(data);
-    if (this.root == null) {
-      this.root = newNode;
-    } else {
-      this.insertNode(this.root, newNode);
-    }
-  }
-
-  insertNode(node: TreeNode, newNode: TreeNode) {
+  private insertNode(node: TreeNode, newNode: TreeNode) {
     if (newNode.key! < node.key!) {
       if (node.left == null) {
         node.left = newNode;
@@ -82,6 +73,15 @@ export class BinarySearchTree {
       } else {
         this.insertNode(node.right, newNode);
       }
+    }
+  }
+
+  add(data) {
+    const newNode = new TreeNode(data);
+    if (this.root == null) {
+      this.root = newNode;
+    } else {
+      this.insertNode(this.root, newNode);
     }
   }
 
