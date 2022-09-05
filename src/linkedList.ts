@@ -57,33 +57,35 @@ export class LinkedList {
   }
 
   delete(i: number) {
-    const current = this._find(i);
-
-    if (current === null) {
-      return null;
-    }
-
+    // Special case for i === 0
     if (i === 0) {
-      const head = this.head;
-      if (head) {
-        this.head = head.next;
+      const node = this.head;
+      if (node) {
+        this.head = node.next;
+
+        if (this.head === null) {
+          this.tail = null;
+        }
+
+        this.length--;
+        return node.value;
       } else {
         return null;
       }
     }
 
-    const prev = this._find(i - 1);
-    if (prev == null) {
-      this.head = current.next;
-    } else {
-      prev.next = current.next;
-    }
+    const node = this._find(i - 1);
+    const excise = node && node.next;
 
-    if (current.next === null) {
-      this.tail = prev;
+    if (excise === null) return null;
+
+    node!.next = excise.next;
+
+    if (node!.next === null) {
+      this.tail = node;
     }
 
     this.length--;
-    return current.value;
+    return excise!.value;
   }
 }
