@@ -1,4 +1,10 @@
-import { BinarySearchTree, TreeNode } from "./binaryTree";
+import {
+  BinarySearchTree,
+  TreeNode,
+  preorderTraverse,
+  inorderTraverse,
+  postorderTraverse,
+} from "./binaryTree";
 const makeTutorialTree = () => {
   const tree = new BinarySearchTree();
   tree.add(10);
@@ -314,32 +320,44 @@ test("Binary search tree 2", () => {
 });
 
 describe("BST traversals", () => {
-  test("preorder", () => {
-    const inputs = [8, 3, 1, 6, 4, 7, 10, 14, 13];
-    const tree = new BinarySearchTree();
-    inputs.forEach((input) => tree.add(input));
-    expect(tree).toEqual({
-      root: {
-        left: {
-          left: { left: null, right: null, value: 1 },
-          right: {
-            left: { left: null, right: null, value: 4 },
-            right: { left: null, right: null, value: 7 },
-            value: 6,
-          },
-          value: 3,
-        },
+  const inputs = [8, 3, 1, 6, 4, 7, 10, 14, 13];
+  const tree = new BinarySearchTree();
+  inputs.forEach((input) => tree.add(input));
+
+  expect(tree).toEqual({
+    root: {
+      left: {
+        left: { left: null, right: null, value: 1 },
         right: {
-          left: null,
-          right: {
-            left: { left: null, right: null, value: 13 },
-            right: null,
-            value: 14,
-          },
-          value: 10,
+          left: { left: null, right: null, value: 4 },
+          right: { left: null, right: null, value: 7 },
+          value: 6,
         },
-        value: 8,
+        value: 3,
       },
-    });
+      right: {
+        left: null,
+        right: {
+          left: { left: null, right: null, value: 13 },
+          right: null,
+          value: 14,
+        },
+        value: 10,
+      },
+      value: 8,
+    },
+  });
+
+  test("preorder", () => {
+    let result = preorderTraverse(tree.root!);
+    expect(result).toEqual(inputs);
+  });
+  test("inorder", () => {
+    let result = inorderTraverse(tree.root!);
+    expect(result).toEqual([1, 3, 4, 6, 7, 8, 10, 13, 14]);
+  });
+  test("postorder", () => {
+    let result = postorderTraverse(tree.root!);
+    expect(result).toEqual([1, 4, 7, 6, 3, 13, 14, 10, 8]);
   });
 });

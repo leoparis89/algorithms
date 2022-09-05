@@ -153,4 +153,32 @@ export class BinarySearchTree {
   // search(node, data)
 }
 
-export const preorderTranverse = (node: TreeNode, arr: number[] = []) => {};
+export const preorderTraverse = (node: TreeNode | null, arr: number[] = []) => {
+  if (node === null) return arr;
+
+  arr.push(node.value);
+  arr = preorderTraverse(node.left, arr);
+  arr = preorderTraverse(node.right, arr);
+  return arr;
+};
+
+export const inorderTraverse = (node: TreeNode | null, arr: number[] = []) => {
+  if (node === null) return arr;
+
+  arr = inorderTraverse(node.left, arr);
+  arr.push(node.value);
+  arr = inorderTraverse(node.right, arr);
+  return arr;
+};
+
+export const postorderTraverse = (
+  node: TreeNode | null,
+  arr: number[] = []
+) => {
+  if (node === null) return arr;
+
+  arr = postorderTraverse(node.left, arr);
+  arr = postorderTraverse(node.right, arr);
+  arr.push(node.value);
+  return arr;
+};
