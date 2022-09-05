@@ -39,7 +39,7 @@ export class LinkedList {
     return this.delete(this.length - 1);
   }
 
-  _find(index: number) {
+  getNode(index: number) {
     if (index < 0) return null;
 
     let node = this.head;
@@ -54,18 +54,18 @@ export class LinkedList {
   }
 
   get(index: number) {
-    let node = this._find(index);
+    let node = this.getNode(index);
     return node && node.value;
   }
 
   delete(i: number) {
-    const current = this._find(i);
+    const current = this.getNode(i);
 
     if (current === null) {
       return null;
     }
 
-    const prev = this._find(i - 1);
+    const prev = this.getNode(i - 1);
 
     if (prev == null) {
       this.head = current.next;
