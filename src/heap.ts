@@ -17,9 +17,7 @@ export const heapify = (arr: number[], i: number) => {
       arr[leftIndex] = current;
       heapify(arr, leftIndex);
     }
-  }
-
-  if (right && right > current) {
+  } else if (right && right > current) {
     if (left && left > right) {
       // swap left
       arr[i] = left;
@@ -32,6 +30,13 @@ export const heapify = (arr: number[], i: number) => {
       heapify(arr, rightIndex);
     }
   }
+};
 
+export const toMaxHep = (arr: number[]) => {
+  const middle = Math.floor(arr.length / 2) - 1;
+
+  for (let i = middle; i >= 0; i--) {
+    heapify(arr, i);
+  }
   return arr;
 };
