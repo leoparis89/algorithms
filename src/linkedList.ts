@@ -40,7 +40,7 @@ export class LinkedList {
   }
 
   pop() {
-    this.delete(this.length - 1);
+    return this.delete(this.length - 1);
   }
 
   getNode(index: number) {
@@ -82,5 +82,6 @@ export class LinkedList {
     }
 
     this.length--;
+    return current.value;
   }
 }

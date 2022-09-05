@@ -22,7 +22,7 @@ test("linkedList", () => {
   expect(array.tail?.value).toEqual("dog");
   expect(array.length).toEqual(2);
 
-  array.pop();
+  expect(array.pop()).toEqual("dog");
   expect(array.head?.value).toEqual("car");
   expect(array.tail?.value).toEqual("car");
   expect(array.tail?.next).toEqual(null);
