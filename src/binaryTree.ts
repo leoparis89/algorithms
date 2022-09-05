@@ -152,3 +152,5 @@ export class BinarySearchTree {
   // postorder(node)
   // search(node, data)
 }
+
+export const preorderTranverse = (node: TreeNode, arr: number[] = []) => {};

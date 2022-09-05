@@ -312,3 +312,34 @@ test("Binary search tree 2", () => {
   expect(objs.right.right.left.left.right).toBeNull();
   expect(objs.right.right.left.left.left).toBeNull();
 });
+
+describe("BST traversals", () => {
+  test("preorder", () => {
+    const inputs = [8, 3, 1, 6, 4, 7, 10, 14, 13];
+    const tree = new BinarySearchTree();
+    inputs.forEach((input) => tree.add(input));
+    expect(tree).toEqual({
+      root: {
+        left: {
+          left: { left: null, right: null, value: 1 },
+          right: {
+            left: { left: null, right: null, value: 4 },
+            right: { left: null, right: null, value: 7 },
+            value: 6,
+          },
+          value: 3,
+        },
+        right: {
+          left: null,
+          right: {
+            left: { left: null, right: null, value: 13 },
+            right: null,
+            value: 14,
+          },
+          value: 10,
+        },
+        value: 8,
+      },
+    });
+  });
+});
