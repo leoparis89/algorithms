@@ -19,7 +19,7 @@ test("ArrayList", () => {
   expect(array.data).toEqual({ "0": "car", "1": "train", "2": "plane" });
 });
 
-describe("ArrayList FE Masters", function () {
+describe("ArrayList 2", function () {
   const range = (length) =>
     Array.apply(null, { length: length }).map(Number.call, Number);
   const abcRange = (length) =>
