@@ -15,4 +15,22 @@ test("linkedList", () => {
   expect(array.get(2)).toEqual("peanut");
   expect(array.head?.value).toEqual("car");
   expect(array.tail?.value).toEqual("peanut");
+  array.pop();
+  expect(array.head?.value).toEqual("car");
+
+  expect(array.head?.next?.value).toEqual("dog");
+  expect(array.tail?.value).toEqual("dog");
+  expect(array.length).toEqual(2);
+
+  array.pop();
+  expect(array.head?.value).toEqual("car");
+  expect(array.tail?.value).toEqual("car");
+  expect(array.tail?.next).toEqual(null);
+
+  expect(array.length).toEqual(1);
+
+  array.pop();
+  expect(array.head).toEqual(null);
+  expect(array.tail).toEqual(null);
+  //   expect(array.length).toEqual(0);
 });

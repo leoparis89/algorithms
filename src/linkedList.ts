@@ -40,13 +40,12 @@ export class LinkedList {
   }
 
   pop() {
-    if (this.isEmpty()) {
-    } else {
-      this.tail = null;
-    }
+    this.delete(this.length - 1);
   }
 
   getNode(index: number) {
+    if (index < 0) return null;
+
     let node = this.head;
 
     let i = 0;
@@ -73,22 +72,15 @@ export class LinkedList {
     const prev = this.getNode(i - 1);
 
     if (prev == null) {
-      this.head = current;
+      this.head = current.next;
     } else {
       prev.next = current.next;
-
-      if (current.next === null) {
-        this.tail = prev;
-      }
     }
+
+    if (current.next === null) {
+      this.tail = prev;
+    }
+
     this.length--;
-
-    // if (i == 0) {
-    //   this.head = this.head!.next;
-    //   this.length--;
-    //   return;
-    // }
-
-    // const prev = this.get(i - 1);
   }
 }
