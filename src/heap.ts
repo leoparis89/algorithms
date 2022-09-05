@@ -32,7 +32,7 @@ export const heapify = (arr: number[], i: number) => {
   }
 };
 
-export const toMaxHep = (arr: number[]) => {
+export const toMaxHeap = (arr: number[]) => {
   const middle = Math.floor(arr.length / 2) - 1;
 
   for (let i = middle; i >= 0; i--) {
