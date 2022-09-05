@@ -360,4 +360,52 @@ describe("BST traversals", () => {
     let result = postorderTraverse(tree.root!);
     expect(result).toEqual([1, 4, 7, 6, 3, 13, 14, 10, 8]);
   });
+
+  test("breadth first search ", () => {
+    const tree: TreeNode = {
+      value: "A",
+      left: {
+        value: "B",
+        left: {
+          value: "D",
+          left: {
+            value: "G",
+            left: null,
+            right: null,
+          },
+          right: null,
+        },
+        right: {
+          value: "E",
+          left: null,
+          right: {
+            value: "H",
+            right: null,
+            left: {
+              value: "K",
+              left: null,
+              right: null,
+            },
+          },
+        },
+      },
+      right: {
+        value: "C",
+        left: {
+          value: "F",
+          left: {
+            value: "I",
+            left: null,
+            right: null,
+          },
+          right: {
+            value: "J",
+            left: null,
+            right: null,
+          },
+        },
+        right: null,
+      },
+    };
+  });
 });

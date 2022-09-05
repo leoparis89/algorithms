@@ -1,5 +1,5 @@
 export class TreeNode {
-  value: number;
+  value: any;
   left: TreeNode | null = null;
   right: TreeNode | null = null;
   constructor(value: number) {
@@ -181,4 +181,8 @@ export const postorderTraverse = (
   arr = postorderTraverse(node.right, arr);
   arr.push(node.value);
   return arr;
+};
+
+export const breadthFirstSearchTravers = (queue, array) => {
+  if (!queue.length) return array;
 };
