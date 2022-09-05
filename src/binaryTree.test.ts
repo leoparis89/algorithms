@@ -277,7 +277,7 @@ describe("Binary Search Tree", () => {
   });
 });
 
-test("should ", () => {
+test("Binary search tree 2", () => {
   const nums = [3, 7, 4, 6, 5, 1, 10, 2, 9, 8];
   const tree = new BinarySearchTree();
   nums.map((num) => tree.add(num));
