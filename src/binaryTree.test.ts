@@ -18,7 +18,7 @@ describe("Binary Search Tree", () => {
     let tree = new BinarySearchTree();
     tree.add(7);
 
-    expect(tree).toEqual({ root: { key: 7, left: null, right: null } });
+    expect(tree).toEqual({ root: { value: 7, left: null, right: null } });
     // mergeSort(input);
   });
 
@@ -32,12 +32,12 @@ describe("Binary Search Tree", () => {
 
     expect(tree).toEqual({
       root: {
-        key: 7,
-        left: { key: 2, left: null, right: null },
+        value: 7,
+        left: { value: 2, left: null, right: null },
         right: {
-          key: 8,
+          value: 8,
           left: null,
-          right: { key: 9, left: null, right: null },
+          right: { value: 9, left: null, right: null },
         },
       },
     });
@@ -54,12 +54,12 @@ describe("Binary Search Tree", () => {
 
     expect(tree).toEqual({
       root: {
-        key: 7,
-        left: { key: 2, left: null, right: null },
+        value: 7,
+        left: { value: 2, left: null, right: null },
         right: {
-          key: 8,
+          value: 8,
           left: null,
-          right: { key: 9, left: null, right: null },
+          right: { value: 9, left: null, right: null },
         },
       },
     });
@@ -74,12 +74,12 @@ describe("Binary Search Tree", () => {
     tree.add(9);
 
     expect(tree.get(8)).toEqual({
-      key: 8,
+      value: 8,
       left: null,
-      right: { key: 9, left: null, right: null },
+      right: { value: 9, left: null, right: null },
     });
 
-    expect(tree.get(9)).toEqual({ key: 9, left: null, right: null });
+    expect(tree.get(9)).toEqual({ value: 9, left: null, right: null });
     expect(tree.get(3)).toEqual(null);
   });
 
@@ -92,15 +92,15 @@ describe("Binary Search Tree", () => {
     tree.add(9);
 
     expect(tree.getLeastChildByKey(7)).toEqual({
-      key: 2,
+      value: 2,
       left: null,
       right: null,
     });
 
     expect(tree.getLeastChildByKey(8)).toEqual({
-      key: 8,
+      value: 8,
       left: null,
-      right: { key: 9, left: null, right: null },
+      right: { value: 9, left: null, right: null },
     });
   });
 
@@ -115,9 +115,9 @@ describe("Binary Search Tree", () => {
     tree.replace(9, null);
     expect(tree).toEqual({
       root: {
-        key: 7,
-        left: { key: 2, left: null, right: null },
-        right: { key: 8, left: null, right: null },
+        value: 7,
+        left: { value: 2, left: null, right: null },
+        right: { value: 8, left: null, right: null },
       },
     });
 
@@ -126,9 +126,9 @@ describe("Binary Search Tree", () => {
     tree.replace(8, node);
     expect(tree).toEqual({
       root: {
-        key: 7,
-        left: { key: 2, left: null, right: null },
-        right: { key: 88, left: null, right: null },
+        value: 7,
+        left: { value: 2, left: null, right: null },
+        right: { value: 88, left: null, right: null },
       },
     });
   });
@@ -139,24 +139,24 @@ describe("Binary Search Tree", () => {
 
       expect(tree).toEqual({
         root: {
-          key: 10,
+          value: 10,
           left: {
-            key: 5,
-            left: { key: 3, left: null, right: null },
+            value: 5,
+            left: { value: 3, left: null, right: null },
             right: {
-              key: 8,
+              value: 8,
               left: {
-                key: 6,
+                value: 6,
                 left: null,
-                right: { key: 7, left: null, right: null },
+                right: { value: 7, left: null, right: null },
               },
               right: null,
             },
           },
           right: {
-            key: 15,
-            left: { key: 12, left: null, right: null },
-            right: { key: 17, left: null, right: null },
+            value: 15,
+            left: { value: 12, left: null, right: null },
+            right: { value: 17, left: null, right: null },
           },
         },
       });
@@ -164,14 +164,14 @@ describe("Binary Search Tree", () => {
       tree.delete(7);
       expect(tree).toEqual({
         root: {
-          key: 10,
+          value: 10,
           left: {
-            key: 5,
-            left: { key: 3, left: null, right: null },
+            value: 5,
+            left: { value: 3, left: null, right: null },
             right: {
-              key: 8,
+              value: 8,
               left: {
-                key: 6,
+                value: 6,
                 left: null,
                 right: null,
               },
@@ -179,9 +179,9 @@ describe("Binary Search Tree", () => {
             },
           },
           right: {
-            key: 15,
-            left: { key: 12, left: null, right: null },
-            right: { key: 17, left: null, right: null },
+            value: 15,
+            left: { value: 12, left: null, right: null },
+            right: { value: 17, left: null, right: null },
           },
         },
       });
@@ -190,14 +190,14 @@ describe("Binary Search Tree", () => {
 
       expect(tree).toEqual({
         root: {
-          key: 10,
+          value: 10,
           left: {
-            key: 5,
-            left: { key: 3, left: null, right: null },
+            value: 5,
+            left: { value: 3, left: null, right: null },
             right: {
-              key: 8,
+              value: 8,
               left: {
-                key: 6,
+                value: 6,
                 left: null,
                 right: null,
               },
@@ -205,9 +205,9 @@ describe("Binary Search Tree", () => {
             },
           },
           right: {
-            key: 15,
+            value: 15,
             left: null,
-            right: { key: 17, left: null, right: null },
+            right: { value: 17, left: null, right: null },
           },
         },
       });
@@ -218,20 +218,20 @@ describe("Binary Search Tree", () => {
       tree.delete(5);
       expect(tree).toEqual({
         root: {
-          key: 10,
+          value: 10,
           left: {
-            key: 6,
-            left: { key: 3, left: null, right: null },
+            value: 6,
+            left: { value: 3, left: null, right: null },
             right: {
-              key: 8,
-              left: { key: 7, left: null, right: null },
+              value: 8,
+              left: { value: 7, left: null, right: null },
               right: null,
             },
           },
           right: {
-            key: 15,
-            left: { key: 12, left: null, right: null },
-            right: { key: 17, left: null, right: null },
+            value: 15,
+            left: { value: 12, left: null, right: null },
+            right: { value: 17, left: null, right: null },
           },
         },
       });
@@ -247,14 +247,14 @@ describe("Binary Search Tree", () => {
       tree.add(14);
       expect(tree).toEqual({
         root: {
-          key: 10,
-          left: { key: 5, left: null, right: null },
+          value: 10,
+          left: { value: 5, left: null, right: null },
           right: {
-            key: 15,
+            value: 15,
             left: {
-              key: 12,
-              left: { key: 11, left: null, right: null },
-              right: { key: 14, left: null, right: null },
+              value: 12,
+              left: { value: 11, left: null, right: null },
+              right: { value: 14, left: null, right: null },
             },
             right: null,
           },
@@ -264,12 +264,12 @@ describe("Binary Search Tree", () => {
       tree.delete(15);
       expect(tree).toEqual({
         root: {
-          key: 10,
-          left: { key: 5, left: null, right: null },
+          value: 10,
+          left: { value: 5, left: null, right: null },
           right: {
-            key: 12,
-            left: { key: 11, left: null, right: null },
-            right: { key: 14, left: null, right: null },
+            value: 12,
+            left: { value: 11, left: null, right: null },
+            right: { value: 14, left: null, right: null },
           },
         },
       });

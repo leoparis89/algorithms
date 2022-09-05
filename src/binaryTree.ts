@@ -1,9 +1,9 @@
 export class TreeNode {
-  key: number;
+  value: number;
   left: TreeNode | null = null;
   right: TreeNode | null = null;
-  constructor(data: number) {
-    this.key = data;
+  constructor(value: number) {
+    this.value = value;
   }
 }
 
@@ -17,10 +17,10 @@ export class BinarySearchTree {
         return null;
       }
 
-      if (key < current.key) {
+      if (key < current.value) {
         current = current.left;
         continue;
-      } else if (key > current.key) {
+      } else if (key > current.value) {
         current = current.right;
         continue;
       } else {
@@ -40,7 +40,7 @@ export class BinarySearchTree {
     let current = this.root;
 
     while (true) {
-      if (key < current.key) {
+      if (key < current.value) {
         if (current.left == null) {
           current.left = newNode;
           break;
@@ -61,7 +61,7 @@ export class BinarySearchTree {
   }
 
   private insertNode(node: TreeNode, newNode: TreeNode) {
-    if (newNode.key! < node.key!) {
+    if (newNode.value! < node.value!) {
       if (node.left == null) {
         node.left = newNode;
       } else {
@@ -111,8 +111,8 @@ export class BinarySearchTree {
 
     if (node.left !== null && node.right !== null) {
       const leastChildOnRight = this.getLeastChildByNode(node.right);
-      this.delete(leastChildOnRight.key);
-      node.key = leastChildOnRight.key;
+      this.delete(leastChildOnRight.value);
+      node.value = leastChildOnRight.value;
     }
 
     this.replace(key, node.left !== null ? node.left : node.right);
@@ -126,17 +126,17 @@ export class BinarySearchTree {
         return;
       }
 
-      if (current?.left?.key == target) {
+      if (current?.left?.value == target) {
         current.left = replacement;
         return;
       }
 
-      if (current?.right?.key == target) {
+      if (current?.right?.value == target) {
         current.right = replacement;
         return;
       }
 
-      if (target < current.key) {
+      if (target < current.value) {
         current = current.left;
       } else {
         current = current.right;
