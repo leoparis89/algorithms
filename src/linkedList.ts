@@ -40,12 +40,12 @@ export class LinkedList {
   }
 
   _find(index: number) {
+    if (index >= this.length) return null;
+
     let node = this.head;
 
-    let i = 0;
-    while (node && i < index) {
-      node = node.next;
-      i++;
+    for (let i = 0; i < index; i++) {
+      node = node!.next;
     }
 
     return node;
