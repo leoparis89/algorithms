@@ -11,10 +11,6 @@ export class LinkedList {
   tail: Node | null = null;
   length = 0;
 
-  private isEmpty() {
-    return this.head === null && this.tail === null;
-  }
-
   //   get length() {
   //     let node = this.head;
 
@@ -30,13 +26,13 @@ export class LinkedList {
   push(val: string) {
     const node = new Node(val);
     this.length++;
-    if (this.isEmpty()) {
+    if (this.head === null) {
       this.head = node;
-      this.tail = node;
     } else {
       this.tail!.next = node;
-      this.tail = node;
     }
+
+    this.tail = node;
   }
 
   pop() {
